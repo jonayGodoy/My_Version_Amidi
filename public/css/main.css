@@ -1,0 +1,58 @@
+body{
+    background-color: white;
+    padding: 5vw;
+    font-family: Arial;
+    color: #575756;
+}
+
+h1{
+    font-size: 24px;
+    margin-bottom: 64px;
+}
+
+.pregunta{
+    background-color: #EDEDED;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 24px 0;
+    cursor: pointer;
+}
+
+.center{
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.cta{
+    background-color: #F98585;
+    color: #EDEDED;
+    padding: 18px;
+    text-align: center;
+    border-radius: 60px;
+    font-size: 36px;
+    margin-top: 10vh;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#amidi > img{
+    margin:0 auto;
+    display:block;
+    max-height: 65vh;
+}
+
+.winner{
+    text-align: center;
+    font-size: 48px;
+}
+
+.winner + p{
+    font-size: 24px;
+    text-align: center;
+}

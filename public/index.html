@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- METAINFO -->
+    <title>Amidi</title>
+    <meta name="description" content="Plataforma para aprender cultura canaria de forma sencilla y divertida.">
+    <meta name="keywords" content="cultura canaria, aprender cultura, islas canarias" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- THUMB -->
+    <meta property="og:image" content="amidi-01.png">
+    <link itemprop="image" href="amidi-01.png">
+    <meta name="thumbnail" content="amidi-01.png" />
+    <meta property="og:image:width" content="460" />
+    <meta property="og:image:height" content="460" />
+
+
+    <!-- ICONS -->
+    <link rel="shortcut icon" href="assets/amidi-01.png">
+    <link rel="icon" sizes="96x96" href="assets/amidi-01.png">
+    <link rel="apple-touch-startup-image" href="assets/amidi-01.png">
+
+    <!-- BROWSER COLOR -->
+    <meta name="theme-color" content="#57CCD8">
+    <meta name="msapplication-navbutton-color" content="#57CCD8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#57CCD8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+<div id="amidi">
+    <img src="assets/amidi.png" alt="Amidi">
+    <div class="cta" onclick="bootstrap()">JUGAR</div>
+</div>
+<div id="app">
+    <div id="preguntas"></div>
+    <div id="siguiente" onclick="renderQuestion()" class="hidden cta">SIGUIENTE</div>
+</div>
+<div id="ganador" class="hidden">
+    <h1 class="winner">¡Has ganado!</h1>
+    <p>¡Felicidades! <br>¡Has acertado correctamente a 5 preguntas!</p>
+    <div class="cta" onclick="bootstrap()">VOLVER A JUGAR</div>
+</div>
+
+<script ></script>
+</body>
+</html>
