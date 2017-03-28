@@ -91,6 +91,17 @@ describe('ManagerQuiz Should', () => {
                 (managerQuiz.getListQuestion().indexOf(question)).should.equal(-1);
         });
 
+        it("I not win because my answer is false", function () {
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
+
+                let question = managerQuiz.getCurrentQuestion();
+                let answerFail = (question.respuesta != question.respuestas[0]) ?
+                    question.respuestas[0] : question.respuestas[1];
+
+                managerQuiz.isCorrectQuestion(question,answerFail).should.equal(false);
+                (managerQuiz.isPlayerWin()).should.equal(false);
+        });
+
 
 
 });

@@ -25,6 +25,10 @@ function ManagerQuiz(ListQuestion) {
          return result;
     };
 
+    this.isPlayerWin = function(){
+        return false;
+    };
+
     function randomQuestion() {
         let index = Math.floor(Math.random() * (listQuestion.length - 0) + 0);
         return listQuestion[index];
