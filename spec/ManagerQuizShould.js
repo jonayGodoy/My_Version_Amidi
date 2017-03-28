@@ -61,8 +61,7 @@ describe('ManagerQuiz Should', () => {
                 let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getListQuestion()[0];
-                let answerFail = (question.respuesta != question.respuestas[0]) ?
-                    question.respuestas[0] : question.respuestas[1];
+                let answerFail = returnAnswerIncorrect(question);
 
 
                 managerQuiz.isCorrectQuestion(question,answerFail).should.equal(false);
@@ -72,11 +71,10 @@ describe('ManagerQuiz Should', () => {
                 let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getCurrentQuestion();
-                let answerFail = (question.respuesta != question.respuestas[0]) ?
-                    question.respuestas[0] : question.respuestas[1];
+                let answerFail = returnAnswerIncorrect(question);
+                managerQuiz.isCorrectQuestion(question,answerFail);
 
 
-                managerQuiz.isCorrectQuestion(question,answerFail).should.equal(false);
                 question.should.equal(managerQuiz.getCurrentQuestion());
 
         });
@@ -85,23 +83,29 @@ describe('ManagerQuiz Should', () => {
                 let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getCurrentQuestion();
+                managerQuiz.isCorrectQuestion(question,question.respuesta);
 
-                managerQuiz.isCorrectQuestion(question,question.respuesta).should.equal(true);
                 question.should.not.equal(managerQuiz.getCurrentQuestion());
                 (managerQuiz.getListQuestion().indexOf(question)).should.equal(-1);
         });
+
+
 
         it("I not win because my answer is false", function () {
                 let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getCurrentQuestion();
-                let answerFail = (question.respuesta != question.respuestas[0]) ?
-                    question.respuestas[0] : question.respuestas[1];
+                let answerFail = returnAnswerIncorrect(question);
 
                 managerQuiz.isCorrectQuestion(question,answerFail).should.equal(false);
                 (managerQuiz.isPlayerWin()).should.equal(false);
         });
 
 
+
+        function returnAnswerIncorrect(question) {
+                return (question.respuesta != question.respuestas[0]) ?
+                    question.respuestas[0] : question.respuestas[1];
+        }
 
 });
