@@ -21,6 +21,11 @@ function ManagerQuiz(ListQuestion) {
         return listQuestion[index];
     }
 
+     this.isCorrectQuestion = function(question,answer) {
+        return true;
+    }
+
+
 
 }
 module.exports = ManagerQuiz;

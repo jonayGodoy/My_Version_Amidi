@@ -1,6 +1,8 @@
 'use strict';
 
 var should = require('chai').should();
+var expect = require('chai').expect;
+
 let ManagerQuiz = require('../src/ManagerQuiz');
 
 describe('ManagerQuiz Should', () => {
@@ -41,13 +43,18 @@ describe('ManagerQuiz Should', () => {
         });
 
 
-        xit("Current question is random", function () {
+        it("Current question is random", function () {
                 let managerQuiz1 =  new ManagerQuiz(listJson.preguntas);
-                let managerQuiz2 =  new ManagerQuiz(listJson.preguntas);
 
-           //     (managerQuiz1.getCurrentQuestion() != managerQuiz2.getCurrentQuestion()).should.equal(true);
-             //   (managerQuiz1.getCurrentQuestion()).should.not.equal(managerQuiz2.getCurrentQuestion());
+              expect(managerQuiz1.getCurrentQuestion()).not.to.be.undefined;
+        });
 
+        it("Answer is correct", function () {
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
+
+                let question = managerQuiz.getListQuestion()[0];
+
+                managerQuiz.isCorrectQuestion(question,question.respuestas[0]).should.equal(true);
         });
 
 });

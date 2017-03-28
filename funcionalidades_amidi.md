@@ -6,11 +6,15 @@
 
 - El json tiene el formato preguntaAmidi{pregunta:"",repuestas:[],respuestaCorrecta:""}
 
+- crear un metodo que sea checkQuestion()
+
+- Ganas cuando aciertas 5 preguntas
+
+- Cuando aciertas un pregunta la quitas de la lista
+
 - El boton siguiente solo aparece cuando se contesta a una pregunta
 
 - Cuando se contesta a  una pregunta cambio de color las incorrectas en rojo las correctas en verde
-
-- Ganas cuando aciertas 5 preguntas
 
 - Si fallas se repite la pregunta que fallaste hasta que aciertes
 
