@@ -1,0 +1,228 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta" : "¿Cuál ha sido el alimento básico de los canarios obtenido de distintos cereales?",
+      "respuestas" : [
+        "El gofio", "El pan", "Las tortas"
+      ],
+      "respuesta" : "El gofio"
+    },
+    {
+      "id": 2,
+      "pregunta" : "¿Cómo se denominan los vientos que predominan en Canarias?",
+      "respuestas" : [
+        "Siroco", "Alisios", "Calima"
+      ],
+      "respuesta" : "Alisios"
+    },
+    {
+      "id": 3,
+      "pregunta" : "¿Cuál de estas islas tiene un mayor número de pozos de agua?",
+      "respuestas" : [
+        "Gran Canaria", "Tenerife", "Lanzarote"
+      ],
+      "respuesta" : "Gran Canaria"
+    },
+    {
+      "id": 5,
+      "pregunta" : "¿Cómo se denominaba el grupo de personas que amenizaban los bailes?",
+      "respuestas" : [
+        "Tocadores", "Músicos", "Parranda"
+      ],
+      "respuesta" : "Parranda"
+    },
+    {
+      "id": 6,
+      "pregunta" : "¿De qué isla era tradicional el baile del sirinoque?",
+      "respuestas" : [
+        "Lanzarote", "La Gomera", "El Hierro","La Palma"
+      ],
+      "respuesta" : "La Palma"
+    },
+    {
+      "id": 7,
+      "pregunta" : "La cabaña bovina está compuesta por:",
+      "respuestas" : [
+        "Ovejas", "Cabras", "Vacas","Cochinos"
+      ],
+      "respuesta" : "Vacas"
+    },
+    {
+      "id": 8,
+      "pregunta" : "La cabaña porcina está compuesta por:",
+      "respuestas" : [
+        "Cabras", "Cochinos", "Burros"
+      ],
+      "respuesta" : "Cochinos"
+    },
+    {
+      "id": 9,
+      "pregunta" : "¿Como se comunicaban algunos pastores a larga distancia?",
+      "respuestas" : [
+        "Chillando", "Silbando", "Con señales de espejos"
+      ],
+      "respuesta" : "Silbando"
+    },
+    {
+      "id": 10,
+      "pregunta" : "¿Cuál es la característica principal de la raza del cerdo canario?",
+      "respuestas" : [
+        "Su color negro", "Su peso", "Su tamaño pequeño"
+      ],
+      "respuesta" : "Su color negro"
+    },
+    {
+      "id": 11,
+      "pregunta" : "¿De qué isla es originario el tagasaste?",
+      "respuestas" : [
+        "La Palma", "El Hierro", "Lanzarote"
+      ],
+      "respuesta" : "La Palma"
+    },
+    {
+      "id": 12,
+      "pregunta" : "¿Cómo se llama la tira que sirve de molde para hacer los quesos?",
+      "respuestas" : [
+        "Empleita o aro", "Quesera", "Cinturón","Estera"
+      ],
+      "respuesta" : "Empleita o aro"
+    },
+    {
+      "id": 13,
+      "pregunta" : "¿Cual ha sido la función principal de la cabaña caprina en las islas?",
+      "respuestas" : [
+        "La producción de leche", "La producción de quesos", "El aprovechamiento de la carne"
+      ],
+      "respuesta" : "La producción de quesos"
+    },
+    {
+      "id": 14,
+      "pregunta" : "¿Que utilidad tiene el zurrón?",
+      "respuestas" : [
+        "Guardar los objetos personales del pastor", "Guardar un poco de leche", "Amasar gofio"
+      ],
+      "respuesta" : "Amasar gofio"
+    },
+    {
+      "id": 15,
+      "pregunta" : "¿Cuál era la característica principal de la oveja en la época de los aborígenes?",
+      "respuestas" : [
+        "Pelo corto y sin lana", "Lana color marrón", "Lana color negro"
+      ],
+      "respuesta" : "Pelo corto y sin lana"
+    },
+    {
+      "id": 16,
+      "pregunta" : "¿Qué duración tiene el período en que se denomina baifo a la cria de una cabra?",
+      "respuestas" : [
+        "Los primeros treinta o cuarenta días", "Los tres primeros meses", "Hasta cumplir un año"
+      ],
+      "respuesta" : "Los primeros treinta o cuarenta días"
+    },
+    {
+      "id": 17,
+      "pregunta" : "¿A qué estaba destinado principalmente el ganado ovino?",
+      "respuestas" : [
+        "A la producción de lana y leche", "Mantequilla", "Quesos"
+      ],
+      "respuesta" : "A la producción de lana y leche"
+    },
+    {
+      "id": 18,
+      "pregunta" : "¿Como se llama la parte delantera del garrote?",
+      "respuestas" : [
+        "Regatón", "Punta", "Puntera"
+      ],
+      "respuesta" : "Regatón"
+    },
+    {
+      "id": 19,
+      "pregunta" : "¿Como se llama la cabaña compuesta por vacas?",
+      "respuestas" : [
+        "Cabaña vacuna", "Cabaña bovina", "Cabaña vaquera"
+      ],
+      "respuesta" : "Cabaña bovina"
+    },
+    {
+      "id": 20,
+      "pregunta" : "¿Que es una cencerra?",
+      "respuestas" : [
+        "Una emfermedad que vuelve locas a las personas", "Una especie de campaña hecha por los pastores"
+      ],
+      "respuesta" : "Una especie de campana hecha por los pastores"
+    },
+    {
+      "id": 21,
+      "pregunta" : "¿De donde es típico el queso de flor?",
+      "respuestas" : [
+        "Guía de Isora", "Santa María de Guía", "Garafía"
+      ],
+      "respuesta" : "Santa María de Guía"
+    },
+    {
+      "id": 22,
+      "pregunta" : "¿Como se llama la enfermedad que pueden padecer los animales en la ubre?",
+      "respuestas" : [
+        "Tetera", "Ubritis", "Tetina","Ubración"
+      ],
+      "respuesta" : "Tetera"
+    },
+    {
+      "id": 23,
+      "pregunta" : "¿De que material estaba hecha la empleita?",
+      "respuestas" : [
+        "De madera", "De soga de pitera", "De hoja de palma"
+      ],
+      "respuesta" : "De hoja de palma"
+    },
+    {
+      "id": 24,
+      "pregunta" : "¿Con qué tipo de ganado está relacionado la producción de lana y leche?",
+      "respuestas" : [
+        "Ovino", "Vacuno", "Porcino"
+      ],
+      "respuesta" : "Ovino"
+    },
+    {
+      "id": 25,
+      "pregunta" : "¿En qué época del año se realizaban las apañadas?",
+      "respuestas" : [
+        "En primavera", "En otoño", "En invierno"
+      ],
+      "respuesta" : "En primavera"
+    },
+    {
+      "id": 26,
+      "pregunta" : "¿Con qué se hacía el pastor las sogas?",
+      "respuestas" : [
+        "Con hilo de pita", "Con enredaderas", "Con hojas de palmera"
+      ],
+      "respuesta" : "Con hilo de pita"
+    },
+    {
+      "id": 27,
+      "pregunta" : "¿Qué tipo de cabaña ganadera ha sido tradicionalmente más numerosa en las islas?",
+      "respuestas" : [
+        "Bovina", "Ovina", "Caprina"
+      ],
+      "respuesta" : "Caprina"
+    },
+    {
+      "id": 28,
+      "pregunta" : "¿Cuál es el instrumento musical más utilizado por el pastor?",
+      "respuestas" : [
+        "Guitarra", "Flauta", "Bandurria"
+      ],
+      "respuesta" : "Flauta"
+    },
+    {
+      "id": 29,
+      "pregunta" : "¿La cabaña ovina está compuesta por?",
+      "respuestas" : [
+        "Cabras", "Vacas", "Cabras y ovejas","Ovejas"
+      ],
+      "respuesta" : "Ovejas"
+    }
+  ]
+}

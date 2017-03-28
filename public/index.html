@@ -33,9 +33,9 @@
 <body>
 <div id="amidi">
     <img src="assets/amidi.png" alt="Amidi">
-    <div class="cta" onclick="bootstrap()">JUGAR</div>
+    <div class="cta" onclick="managerAmidi.start('amidi','app')">JUGAR</div>
 </div>
-<div id="app">
+<div id="app" class="hidden">
     <div id="preguntas"></div>
     <div id="siguiente" onclick="renderQuestion()" class="hidden cta">SIGUIENTE</div>
 </div>
@@ -45,6 +45,9 @@
     <div class="cta" onclick="bootstrap()">VOLVER A JUGAR</div>
 </div>
 
-<script ></script>
+<script src="src/ManagerUIAmidi.js"></script>
+<script>
+    let managerAmidi = new ManagerUIAmidi();
+</script>
 </body>
 </html>
