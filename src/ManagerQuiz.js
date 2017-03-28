@@ -7,6 +7,8 @@ function ManagerQuiz(ListQuestion, numberForWin) {
     let listQuestion = ListQuestion;
     let currentQuestion = randomQuestion();
 
+    let countQuestionsSuccess = 0;
+
     constructor();
     function constructor() {
         if(NUMBER_FOR_WIN == undefined)throw "You have introduce numberForWin in the constructor";
@@ -21,13 +23,16 @@ function ManagerQuiz(ListQuestion, numberForWin) {
      this.isCorrectQuestion = function(question,answer) {
         let result = question.respuesta == answer;
 
-         if(result) changeQuestion();
+         if(result){
+             changeQuestion();
+             countQuestionsSuccess += 1;
+         }
 
          return result;
     };
 
     this.isPlayerWin = function(){
-        return false;
+        return (countQuestionsSuccess == NUMBER_FOR_WIN);
     };
 
     function randomQuestion() {
