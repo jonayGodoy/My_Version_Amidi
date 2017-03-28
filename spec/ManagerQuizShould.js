@@ -70,9 +70,10 @@ describe('ManagerQuiz Should', () => {
 
                 let question = managerQuiz.getCurrentQuestion();
 
-                managerQuiz.isCorrectQuestion(question,question.respuestas[1]);
-
+                managerQuiz.isCorrectQuestion(question,question.respuestas[1]).should.equal(false);;
                 question.should.equal(managerQuiz.getCurrentQuestion());
         });
+
+
 
 });
