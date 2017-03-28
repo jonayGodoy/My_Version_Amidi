@@ -13,6 +13,10 @@
     - Cuando aciertas un pregunta debes cambiar de pregunta y eliminar la acertada
 
     - Cuando aciertas un pregunta la quitas de la lista
+    
+    - si no introduces un numero de aciertos para ganar managerQuiz lanzará una excepcion
+    
+    - si el numero de aciertos que introduce no es un numero lanzará una excepcion
 
 - *El boton siguiente solo aparece cuando se contesta a una pregunta
 
