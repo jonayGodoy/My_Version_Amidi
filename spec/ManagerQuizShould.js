@@ -65,4 +65,14 @@ describe('ManagerQuiz Should', () => {
                 managerQuiz.isCorrectQuestion(question,question.respuestas[1]).should.equal(false);
         });
 
+        it("Fail and not change question", function () {
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
+
+                let question = managerQuiz.getCurrentQuestion();
+
+                managerQuiz.isCorrectQuestion(question,question.respuestas[1]);
+
+                question.should.equal(managerQuiz.getCurrentQuestion());
+        });
+
 });
