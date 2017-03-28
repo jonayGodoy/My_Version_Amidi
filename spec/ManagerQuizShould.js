@@ -61,17 +61,24 @@ describe('ManagerQuiz Should', () => {
                 let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getListQuestion()[0];
+                let answerFail = (question.respuesta != question.respuestas[0]) ?
+                    question.respuestas[0] : question.respuestas[1];
 
-                managerQuiz.isCorrectQuestion(question,question.respuestas[1]).should.equal(false);
+
+                managerQuiz.isCorrectQuestion(question,answerFail).should.equal(false);
         });
 
         it("Fail and not change question", function () {
                 let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getCurrentQuestion();
+                let answerFail = (question.respuesta != question.respuestas[0]) ?
+                    question.respuestas[0] : question.respuestas[1];
 
-                managerQuiz.isCorrectQuestion(question,question.respuestas[1]).should.equal(false);;
+
+                managerQuiz.isCorrectQuestion(question,answerFail).should.equal(false);
                 question.should.equal(managerQuiz.getCurrentQuestion());
+
         });
 
         it("Success, and change question and delete the last", function () {
@@ -79,8 +86,9 @@ describe('ManagerQuiz Should', () => {
 
                 let question = managerQuiz.getCurrentQuestion();
 
-                managerQuiz.isCorrectQuestion(question,question.respuestas[0]).should.equal(true);
+                managerQuiz.isCorrectQuestion(question,question.respuesta).should.equal(true);
                 question.should.not.equal(managerQuiz.getCurrentQuestion());
+                (managerQuiz.getListQuestion().indexOf(question)).should.equal(-1);
         });
 
 
