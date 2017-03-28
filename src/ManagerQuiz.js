@@ -5,22 +5,15 @@ function ManagerQuiz(ListQuestion) {
     let listQuestion = ListQuestion;
     let currentQuestion = randomQuestion();
 
+    this.getCurrentQuestion = () => (currentQuestion);
 
-    this.getCurrentQuestion = function(){
-        return currentQuestion;
-    };
-
-    this.getListQuestion = function(){
-        return listQuestion;
-    };
+    this.getListQuestion = () =>(listQuestion);
 
 
      this.isCorrectQuestion = function(question,answer) {
         let result = question.respuesta == answer;
 
-         if(result){
-             changeQuestion();
-         }
+         if(result) changeQuestion();
 
          return result;
     };
