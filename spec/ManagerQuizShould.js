@@ -57,4 +57,12 @@ describe('ManagerQuiz Should', () => {
                 managerQuiz.isCorrectQuestion(question,question.respuestas[0]).should.equal(true);
         });
 
+        it("Answer is not correct", function () {
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
+
+                let question = managerQuiz.getListQuestion()[0];
+
+                managerQuiz.isCorrectQuestion(question,question.respuestas[1]).should.equal(false);
+        });
+
 });

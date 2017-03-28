@@ -22,7 +22,7 @@ function ManagerQuiz(ListQuestion) {
     }
 
      this.isCorrectQuestion = function(question,answer) {
-        return true;
+        return question.respuesta == answer;
     }
 
 
