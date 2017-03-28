@@ -8,6 +8,7 @@ function ManagerUIAmidi() {
 
             divLoad.classList.add('hidden');
             divApp.classList.remove('hidden');
+
         }
     };
 }
