@@ -9,10 +9,8 @@ function ManagerQuiz(ListQuestion, numberForWin) {
 
     constructor();
     function constructor() {
-        if(numberForWin == undefined){
-            throw "You has introduce numberForWin in the constructor";
-        }
-
+        if(NUMBER_FOR_WIN == undefined)throw "You have introduce numberForWin in the constructor";
+        if(!Number.isInteger(NUMBER_FOR_WIN))throw "You numberForWin have type Integer";
     };
 
     this.getCurrentQuestion = () => (currentQuestion);

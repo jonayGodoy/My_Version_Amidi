@@ -103,7 +103,11 @@ describe('ManagerQuiz Should', () => {
         });
 
         it("if not introduce a parameter questions for win ManagerQuiz Call Exception", function () {
-                expect(ManagerQuiz.bind(ManagerQuiz,listJson)).to.throw("You has introduce numberForWin in the constructor");
+                expect(ManagerQuiz.bind(ManagerQuiz,listJson)).to.throw("You have introduce numberForWin in the constructor");
+        });
+
+        it("if not introduce a number questions for win ManagerQuiz Call Exception", function () {
+                expect(ManagerQuiz.bind(ManagerQuiz,listJson,"5")).to.throw("You numberForWin have type Integer");
         });
 
 
