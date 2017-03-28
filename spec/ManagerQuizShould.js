@@ -74,6 +74,15 @@ describe('ManagerQuiz Should', () => {
                 question.should.equal(managerQuiz.getCurrentQuestion());
         });
 
+        it("Success, and change question and delete the last", function () {
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
+
+                let question = managerQuiz.getCurrentQuestion();
+
+                managerQuiz.isCorrectQuestion(question,question.respuestas[0]).should.equal(true);
+                question.should.not.equal(managerQuiz.getCurrentQuestion());
+        });
+
 
 
 });

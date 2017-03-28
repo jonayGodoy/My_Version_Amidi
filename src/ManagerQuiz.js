@@ -1,6 +1,5 @@
 'use strict';
 
-
 function ManagerQuiz(ListQuestion) {
 
     let listQuestion = ListQuestion;
@@ -9,23 +8,37 @@ function ManagerQuiz(ListQuestion) {
 
     this.getCurrentQuestion = function(){
         return currentQuestion;
-    }
+    };
 
     this.getListQuestion = function(){
         return listQuestion;
-    }
+    };
 
 
-     function randomQuestion() {
+     this.isCorrectQuestion = function(question,answer) {
+        let result = question.respuesta == answer;
+
+         if(result){
+             changeQuestion();
+         }
+
+         return result;
+    };
+
+    function randomQuestion() {
         let index = Math.floor(Math.random() * (listQuestion.length - 0) + 0);
         return listQuestion[index];
     }
 
-     this.isCorrectQuestion = function(question,answer) {
-        return question.respuesta == answer;
+    function changeQuestion() {
+        deleteCurrentQuestionToList();
+        currentQuestion = randomQuestion();
     }
 
-
+    function deleteCurrentQuestionToList(){
+        let position = listQuestion.indexOf(currentQuestion);
+        listQuestion.splice(position,1);
+    }
 
 }
 module.exports = ManagerQuiz;
