@@ -2,7 +2,7 @@
 
 let should = require('chai').should();
 
-describe('ManagerUI Should', () => {
+describe('ManagerDom Should', () => {
 
 
     it("test green",() => {

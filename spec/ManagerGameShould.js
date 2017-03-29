@@ -7,6 +7,7 @@ var sinon = require('sinon');
 
 
 describe("ManagerGame Should", function () {
+
     it('First test green with sinon, calls the original function only once', function () {
         function once(fn) {
             var returnValue, called = false;
@@ -24,8 +25,6 @@ describe("ManagerGame Should", function () {
         var proxy = once(callback);
 
         proxy();
-        proxy();
-
         assert(callback.calledOnce);
     });
 

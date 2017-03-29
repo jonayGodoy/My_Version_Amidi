@@ -1,6 +1,6 @@
 'use strict';
 
-function ManagerUIAmidi() {
+function ManagerDom() {
     return {
         start: (idLoad, idApp) => {
             let divLoad = document.getElementById(idLoad);
