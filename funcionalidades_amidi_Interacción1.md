@@ -6,6 +6,8 @@
 
 - *El json tiene el formato preguntaAmidi{pregunta:"",repuestas:[],respuestaCorrecta:""}
 
+- *Si fallas se repite la pregunta que fallaste hasta que aciertes
+
 - *Ganas cuando aciertas 5 preguntas
 
     - crear un metodo que sea checkQuestion()
@@ -14,15 +16,13 @@
 
     - Cuando aciertas un pregunta la quitas de la lista
     
-    - si no introduces un numero de aciertos para ganar managerQuiz lanzará una excepcion
+    - si no introduces un numero de aciertos para ganar ManagerQuiz lanzará una excepcion
     
     - si el numero de aciertos que introduce no es un numero lanzará una excepcion
 
 - *El boton siguiente solo aparece cuando se contesta a una pregunta
 
 - *Cuando se contesta a  una pregunta cambio de color las incorrectas en rojo las correctas en verde
-
-- *Si fallas se repite la pregunta que fallaste hasta que aciertes
 
 - *las preguntas puede tener distina cantidad de respuestas correctas
 
