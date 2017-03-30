@@ -13,7 +13,6 @@ function ManagerQuiz(ListQuestion) {
 
      this.isCorrectQuestion = function(question,answer) {
         let result = question.respuesta == answer;
-
          return result;
     };
 

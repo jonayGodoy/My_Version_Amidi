@@ -123,18 +123,22 @@ describe("ManagerGame Should", function () {
         managerDomMockSinon.verify();
     });
 
-    xit("Player win, player success 5 answer", function () {
+    it("Player win, player success 5 answer", function () {
         let numberForWin = NUMBER_FOR_WIN_DEFAULT_TEST
 
-        let managerQuiz =  new ManagerQuiz(listJson.preguntas,numberForWin);
+        let managerGame = new ManagerGame(managerQuiz,managerDomMock,numberForWin);
+        managerDomMockSinon.expects("renderQuestionAnswered").exactly(numberForWin);
+        managerDomMockSinon.expects("ShowButtonNext").exactly(numberForWin);
+        managerDomMockSinon.expects("renderQuestion").exactly(numberForWin);
 
         for(let i = 0; i < numberForWin;i++){
             let question = managerQuiz.getCurrentQuestion();
-            managerQuiz.isCorrectQuestion(question,question.respuesta);
+            managerGame.updateAnswer(question.respuesta);
+            managerGame.nextQuestion();
         }
 
-
-        (managerQuiz.isPlayerWin()).should.equal(true);
+        expect(managerGame.isPlayerWin()).to.be.true;
+        managerDomMockSinon.verify();
     });
 
 

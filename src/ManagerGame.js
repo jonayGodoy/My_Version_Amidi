@@ -32,6 +32,12 @@ function ManagerGame(managerQuiz, managerDom, numberForWin) {
         managerDom.ShowButtonNext();
     };
 
+    this.nextQuestion = function(){
+        managerQuiz.updateQuestions();
+        let question = managerQuiz.getCurrentQuestion();
+        managerDom.renderQuestion(question);
+    };
+
     this.isPlayerWin = function(){
         return (countQuestionsSuccess == NUMBER_FOR_WIN);
     };
