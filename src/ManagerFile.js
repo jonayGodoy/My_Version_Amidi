@@ -1,6 +1,6 @@
 function ManagerFile() {
 
-    function loadJson(){
+     this.loadJson = function(){
         let httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function() {
             if (httpRequest.readyState === 4) {
@@ -15,3 +15,4 @@ function ManagerFile() {
         httpRequest.send();
     }
 }
+module.exports = ManagerFile;
