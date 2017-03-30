@@ -45,11 +45,18 @@
     <div class="cta" onclick="bootstrap()">VOLVER A JUGAR</div>
 </div>
 
-<script src="../src/ManagerDom.js"></script>
-<script src="../src/ManagerQuiz.js"></script>
 
+
+<script src="build/ManagerFile.js"></script>
+<script src="build/ManagerDom.js"></script>
 <script>
-    let managerAmidi = new ManagerUIAmidi();
+
+
+
+
+    let managerFile = new ManagerFile();
+    let listQuestion = managerFile.loadJson();
+    console.log(listQuestion);
 </script>
 </body>
 </html>
