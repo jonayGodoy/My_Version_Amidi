@@ -16,7 +16,8 @@ describe("ManagerGame Should", function () {
 
     let managerQuiz;
     let managerDomMockSinon;
-    let managerDomMock
+    let managerDomMock;
+    let managerGame;
 
     beforeEach(function () {
         managerDomMock = new ManagerDOM();
@@ -94,11 +95,11 @@ describe("ManagerGame Should", function () {
 
         let listQuestion = managerFileStub.loadJson();
         managerQuiz = new ManagerQuiz(listQuestion,5);
+
+        managerGame = new ManagerGame(managerQuiz,managerDomMock);
     });
 
     it('Game Start', function () {
-        let managerGame = new ManagerGame(managerQuiz,managerDomMock);
-
         managerDomMockSinon.expects("start").once();
         managerDomMockSinon.expects("renderQuestion").once();
 
