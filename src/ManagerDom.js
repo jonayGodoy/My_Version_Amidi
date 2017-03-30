@@ -17,5 +17,13 @@ function ManagerDom() {
             throw "UnSupportedOperationException";
         };
 
+        this.renderQuestionAnswered = (question) => {
+            throw "UnSupportedOperationException";
+        };
+
+        this.ShowButtonNext = () => {
+            throw "UnSupportedOperationException";
+        };
+
 }
 module.exports = ManagerDom;

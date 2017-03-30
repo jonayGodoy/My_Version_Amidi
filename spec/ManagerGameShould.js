@@ -14,6 +14,8 @@ let ManagerGame = require('../src/ManagerGame');
 
 describe("ManagerGame Should", function () {
 
+    const NUMBER_FOR_WIN_DEFAULT_TEST = 5;
+
     let managerQuiz;
     let managerDomMockSinon;
     let managerDomMock;
@@ -94,9 +96,9 @@ describe("ManagerGame Should", function () {
         );
 
         let listQuestion = managerFileStub.loadJson();
-        managerQuiz = new ManagerQuiz(listQuestion,5);
+        managerQuiz = new ManagerQuiz(listQuestion.preguntas);
 
-        managerGame = new ManagerGame(managerQuiz,managerDomMock);
+        managerGame = new ManagerGame(managerQuiz,managerDomMock,NUMBER_FOR_WIN_DEFAULT_TEST);
     });
 
     it('Game Start', function () {
@@ -108,7 +110,41 @@ describe("ManagerGame Should", function () {
         managerDomMockSinon.verify();
     });
 
+    it("Player answer fail", function () {
+        let question = managerQuiz.getCurrentQuestion();
+        let failAnswer = (question.respuesta != question.respuesta[0]) ? question.respuesta[0] : question.respuesta[1];
+        managerDomMockSinon.expects("renderQuestionAnswered").once();
+        managerDomMockSinon.expects("ShowButtonNext").once();
 
+
+        managerGame.updateAnswer(failAnswer);
+        expect(managerGame.isPlayerWin()).to.be.false;
+
+        managerDomMockSinon.verify();
+    });
+
+    xit("Player win, player success 5 answer", function () {
+        let numberForWin = NUMBER_FOR_WIN_DEFAULT_TEST
+
+        let managerQuiz =  new ManagerQuiz(listJson.preguntas,numberForWin);
+
+        for(let i = 0; i < numberForWin;i++){
+            let question = managerQuiz.getCurrentQuestion();
+            managerQuiz.isCorrectQuestion(question,question.respuesta);
+        }
+
+
+        (managerQuiz.isPlayerWin()).should.equal(true);
+    });
+
+
+    it("if not introduce a parameter questions for win ManagerQuiz Call Exception", function () {
+        expect(ManagerGame.bind(managerGame,managerQuiz,managerDomMock)).to.throw("You have introduce numberForWin in the constructor");
+    });
+
+    it("if not introduce a number questions for win ManagerQuiz Call Exception", function () {
+        expect(ManagerGame.bind(managerGame,managerQuiz,managerDomMock,"5")).to.throw("You numberForWin have type Integer");
+    });
 
 
 });

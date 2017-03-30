@@ -8,7 +8,6 @@ let ManagerQuiz = require('../src/ManagerQuiz');
 describe('ManagerQuiz Should', () => {
 
         let listJson;
-        const NUMBER_FOR_WIN_DEFAULT_TEST = 5;
 
         beforeEach(function () {
                  listJson = {"preguntas": [
@@ -82,7 +81,7 @@ describe('ManagerQuiz Should', () => {
 
 
         it('has list Questions in Json with format Question', function () {
-                let managerQuiz =  new ManagerQuiz(listJson.preguntas,NUMBER_FOR_WIN_DEFAULT_TEST);
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getListQuestion()[0];
 
@@ -93,13 +92,13 @@ describe('ManagerQuiz Should', () => {
 
 
         it("Current question is random", function () {
-                let managerQuiz1 =  new ManagerQuiz(listJson.preguntas,NUMBER_FOR_WIN_DEFAULT_TEST);
+                let managerQuiz1 =  new ManagerQuiz(listJson.preguntas);
 
               expect(managerQuiz1.getCurrentQuestion()).not.to.be.undefined;
         });
 
         it("Answer is correct", function () {
-                let managerQuiz =  new ManagerQuiz(listJson.preguntas,NUMBER_FOR_WIN_DEFAULT_TEST);
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getListQuestion()[0];
 
@@ -107,7 +106,7 @@ describe('ManagerQuiz Should', () => {
         });
 
         it("Answer is not correct", function () {
-                let managerQuiz =  new ManagerQuiz(listJson.preguntas,NUMBER_FOR_WIN_DEFAULT_TEST);
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getListQuestion()[0];
                 let answerFail = returnAnswerIncorrect(question);
@@ -117,7 +116,7 @@ describe('ManagerQuiz Should', () => {
         });
 
         it("Fail and not change question", function () {
-                let managerQuiz =  new ManagerQuiz(listJson.preguntas,NUMBER_FOR_WIN_DEFAULT_TEST);
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getCurrentQuestion();
                 let answerFail = returnAnswerIncorrect(question);
@@ -127,50 +126,15 @@ describe('ManagerQuiz Should', () => {
 
         });
 
-        it("Success, and change question and delete the last", function () {
-                let managerQuiz =  new ManagerQuiz(listJson.preguntas,NUMBER_FOR_WIN_DEFAULT_TEST);
+        it("Change question and delete the last", function () {
+                let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
                 let question = managerQuiz.getCurrentQuestion();
-                managerQuiz.isCorrectQuestion(question,question.respuesta);
+                managerQuiz.updateQuestions(question);
 
                 question.should.not.equal(managerQuiz.getCurrentQuestion());
                 (managerQuiz.getListQuestion().indexOf(question)).should.equal(-1);
         });
-
-
-
-        it("Player not win because my answer is false", function () {
-                let managerQuiz =  new ManagerQuiz(listJson.preguntas,NUMBER_FOR_WIN_DEFAULT_TEST);
-
-                let question = managerQuiz.getCurrentQuestion();
-                let answerFail = returnAnswerIncorrect(question);
-
-                managerQuiz.isCorrectQuestion(question,answerFail);
-                (managerQuiz.isPlayerWin()).should.equal(false);
-        });
-
-        it("Player win, player success 5 answer", function () {
-                let numberForWin = NUMBER_FOR_WIN_DEFAULT_TEST
-
-                let managerQuiz =  new ManagerQuiz(listJson.preguntas,numberForWin);
-
-                for(let i = 0; i < numberForWin;i++){
-                        let question = managerQuiz.getCurrentQuestion();
-                        managerQuiz.isCorrectQuestion(question,question.respuesta);
-                }
-
-
-                (managerQuiz.isPlayerWin()).should.equal(true);
-        });
-
-        it("if not introduce a parameter questions for win ManagerQuiz Call Exception", function () {
-                expect(ManagerQuiz.bind(ManagerQuiz,listJson)).to.throw("You have introduce numberForWin in the constructor");
-        });
-
-        it("if not introduce a number questions for win ManagerQuiz Call Exception", function () {
-                expect(ManagerQuiz.bind(ManagerQuiz,listJson,"5")).to.throw("You numberForWin have type Integer");
-        });
-
 
         function returnAnswerIncorrect(question) {
                 return (question.respuesta != question.respuestas[0]) ?
