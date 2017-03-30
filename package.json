@@ -11,8 +11,7 @@
     "babel-cli": "^6.24.0",
     "babel-preset-env": "^1.2.2",
     "chai": "^3.5.0",
-    "jest": "^19.0.2",
     "mocha": "^3.2.0",
-    "testdouble": "^2.1.2"
+    "sinon": "^2.1.0"
   }
 }
