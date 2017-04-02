@@ -54,7 +54,14 @@ module.exports = function ManagerDom() {
     };
 
     this.printVictory = () => {
-        throw "UnSupportedException";
+        let divVictory = document.getElementById(idWin);
+        let divQuestion = document.getElementById(idQuestion);
+
+
+        this.toggleButtonNext();
+        divVictory.classList.remove('hidden');
+
+        divQuestion.classList.add('hidden');
     };
 
     function removeAnswerOnClick(){
