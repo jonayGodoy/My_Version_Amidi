@@ -1,8 +1,6 @@
 'use strict';
 
-let ManagerDom = require('../src/ManagerDom');
-
-function ManagerGame(managerQuiz, managerDom, numberForWin) {
+module.exports = function ManagerGame(managerQuiz, managerDom, numberForWin) {
 
     const NUMBER_FOR_WIN = numberForWin;
 
@@ -22,24 +20,23 @@ function ManagerGame(managerQuiz, managerDom, numberForWin) {
     };
 
     this.updateAnswer = (answer) => {
-        let question = managerQuiz.getCurrentQuestion();
-
-        if(managerQuiz.isCorrectQuestion(answer)){
+        let isCorrect = managerQuiz.isCorrectQuestion(answer)
+        if(isCorrect){
             countQuestionsSuccess += 1;
+            managerQuiz.updateQuestions();
         }
 
-        managerDom.renderQuestionAnswered(question);
-        managerDom.ShowButtonNext();
+        managerDom.renderQuestionAnswered(answer,isCorrect);
+        managerDom.toggleButtonNext();
     };
 
     this.nextQuestion = function(){
-        managerQuiz.updateQuestions();
         let question = managerQuiz.getCurrentQuestion();
         managerDom.renderQuestion(question);
+        managerDom.toggleButtonNext();
     };
 
     this.isPlayerWin = function(){
         return (countQuestionsSuccess == NUMBER_FOR_WIN);
     };
-}
-module.exports = ManagerGame;
+};

@@ -13,12 +13,6 @@ let numberForWin = 5;
 let managerGame = new ManagerGame(managerQuiz,managerDom,numberForWin);
 
 window.start = managerGame.startGame;
+window.updateAnswer = managerGame.updateAnswer;
+window.nextQuestion = managerGame.nextQuestion;
 
-
-
-
-/*
-window.uclicked = function() {
-    carlos.saluda();
-};
-window.uclicked = uclicked;*/

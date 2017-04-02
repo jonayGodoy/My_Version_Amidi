@@ -114,7 +114,7 @@ describe("ManagerGame Should", function () {
         let question = managerQuiz.getCurrentQuestion();
         let failAnswer = (question.respuesta != question.respuesta[0]) ? question.respuesta[0] : question.respuesta[1];
         managerDomMockSinon.expects("renderQuestionAnswered").once();
-        managerDomMockSinon.expects("ShowButtonNext").once();
+        managerDomMockSinon.expects("toggleButtonNext").once();
 
 
         managerGame.updateAnswer(failAnswer);
@@ -123,12 +123,23 @@ describe("ManagerGame Should", function () {
         managerDomMockSinon.verify();
     });
 
+    it("Player answer fail and repeat question", function () {
+        let question = managerQuiz.getCurrentQuestion();
+        let failAnswer = (question.respuesta != question.respuesta[0]) ? question.respuesta[0] : question.respuesta[1];
+        managerDomMockSinon.expects("renderQuestionAnswered").once();
+        managerDomMockSinon.expects("toggleButtonNext").once();
+
+        managerGame.updateAnswer(failAnswer);
+
+        assert.deepEqual(question, managerQuiz.getCurrentQuestion());
+    });
+
     it("Player win, player success 5 answer", function () {
         let numberForWin = NUMBER_FOR_WIN_DEFAULT_TEST
 
         let managerGame = new ManagerGame(managerQuiz,managerDomMock,numberForWin);
         managerDomMockSinon.expects("renderQuestionAnswered").exactly(numberForWin);
-        managerDomMockSinon.expects("ShowButtonNext").exactly(numberForWin);
+        managerDomMockSinon.expects("toggleButtonNext").exactly(numberForWin*2);
         managerDomMockSinon.expects("renderQuestion").exactly(numberForWin);
 
         for(let i = 0; i < numberForWin;i++){

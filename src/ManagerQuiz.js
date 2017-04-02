@@ -11,8 +11,8 @@ function ManagerQuiz(ListQuestion) {
     this.getListQuestion = () =>(listQuestion);
 
 
-     this.isCorrectQuestion = function(question,answer) {
-        let result = question.respuesta == answer;
+     this.isCorrectQuestion = function(answer) {
+        let result = currentQuestion.respuesta === answer;
          return result;
     };
 

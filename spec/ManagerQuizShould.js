@@ -103,9 +103,9 @@ describe('ManagerQuiz Should', () => {
         it("Answer is correct", function () {
                 let managerQuiz =  new ManagerQuiz(listJson.preguntas);
 
-                let question = managerQuiz.getListQuestion()[0];
+                let question = managerQuiz.getCurrentQuestion();
 
-                managerQuiz.isCorrectQuestion(question,question.respuestas[0]).should.equal(true);
+                managerQuiz.isCorrectQuestion(question.respuesta).should.equal(true);
         });
 
         it("Answer is not correct", function () {
