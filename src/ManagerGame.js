@@ -24,7 +24,7 @@ module.exports = function ManagerGame(managerQuiz, managerDom, numberForWin) {
     this.updateAnswer = (answer) => {
         let isCorrect = managerQuiz.isCorrectQuestion(answer)
         if(isCorrect){
-            countQuestionsSuccess += 1;
+            countQuestionsSuccess = countQuestionsSuccess +1;
             managerQuiz.updateQuestions();
         }
 
@@ -32,13 +32,19 @@ module.exports = function ManagerGame(managerQuiz, managerDom, numberForWin) {
         managerDom.toggleButtonNext();
     };
 
-    this.nextQuestion = function(){
-        let question = managerQuiz.getCurrentQuestion();
-        managerDom.renderQuestion(question);
-        managerDom.toggleButtonNext();
+    this.isPlayerWin = function(){
+        return (countQuestionsSuccess === NUMBER_FOR_WIN);
     };
 
-    this.isPlayerWin = function(){
-        return (countQuestionsSuccess == NUMBER_FOR_WIN);
+    this.nextQuestion = function(){
+        console.log(this.isPlayerWin());
+        if(this.isPlayerWin()){
+            managerDom.printVictory();
+        }else{
+            let question = managerQuiz.getCurrentQuestion();
+            managerDom.renderQuestion(question);
+            managerDom.toggleButtonNext();
+        }
+
     };
 };

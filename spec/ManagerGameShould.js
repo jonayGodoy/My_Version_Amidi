@@ -137,8 +137,9 @@ describe("ManagerGame Should", function () {
 
         let managerGame = new ManagerGame(managerQuiz,managerDomMock,numberForWin);
         managerDomMockSinon.expects("renderQuestionAnswered").exactly(numberForWin);
-        managerDomMockSinon.expects("toggleButtonNext").exactly(numberForWin*2);
-        managerDomMockSinon.expects("renderQuestion").exactly(numberForWin);
+        managerDomMockSinon.expects("toggleButtonNext").exactly((numberForWin*2)-1);
+        managerDomMockSinon.expects("renderQuestion").exactly(numberForWin-1);
+        managerDomMockSinon.expects("printVictory").once();
 
         for(let i = 0; i < numberForWin;i++){
             let question = managerQuiz.getCurrentQuestion();

@@ -8,6 +8,8 @@ module.exports = function ManagerDom() {
     const idQuestion = "preguntas";
     const idNext = "siguiente";
 
+    const idWin = "ganador";
+
     this.start = () => {
         let divLoad = document.getElementById(idLoad);
         let divApp = document.getElementById(idApp);
@@ -51,6 +53,9 @@ module.exports = function ManagerDom() {
             : classList.add('hidden')
     };
 
+    this.printVictory = () => {
+        throw "UnSupportedException";
+    };
 
     function removeAnswerOnClick(){
         let divQuestion = document.getElementById(idQuestion);
