@@ -8,14 +8,14 @@ let sinon = require('sinon');
 let ManagerQuiz = require('../src/ManagerQuiz');
 let ManagerDOM = require('../src/ManagerDom');
 let ManagerFile = require('../src/ManagerFile');
-let ManagerGame = require('../src/ManagerGame');
+let Game = require('../src/Game');
 
 
-describe("ManagerGame Should", function () {
+describe("Game Should", function () {
     let managerQuiz;
     let managerDomMockSinon;
     let managerDomMock;
-    let managerGame;
+    let game;
 
     beforeEach(function () {
         managerDomMock = new ManagerDOM();
@@ -94,14 +94,14 @@ describe("ManagerGame Should", function () {
         let listJson = managerFileStub.loadJson();
         managerQuiz = new ManagerQuiz(listJson.preguntas);
 
-        managerGame = new ManagerGame(managerQuiz,managerDomMock);
+        game = new Game(managerQuiz,managerDomMock);
     });
 
     it('Game Start', function () {
         managerDomMockSinon.expects("start").once();
         managerDomMockSinon.expects("renderQuestion").once();
 
-        managerGame.startGame();
+        game.startGame();
 
         managerDomMockSinon.verify();
     });
@@ -114,7 +114,7 @@ describe("ManagerGame Should", function () {
 
         managerDomMockSinon.expects("printVictory").never();
 
-        managerGame.updateAnswer(failAnswer);
+        game.updateAnswer(failAnswer);
 
         managerDomMockSinon.verify();
     });
@@ -125,7 +125,7 @@ describe("ManagerGame Should", function () {
         managerDomMockSinon.expects("renderQuestionAnswered").once();
         managerDomMockSinon.expects("toggleButtonNext").once();
 
-        managerGame.updateAnswer(failAnswer);
+        game.updateAnswer(failAnswer);
 
         assert.deepEqual(question, managerQuiz.getCurrentQuestion());
     });
@@ -133,7 +133,7 @@ describe("ManagerGame Should", function () {
     it("Player win, player success 5 answer and printVictory", function () {
         let numberForWin = 5;
 
-        let managerGame = new ManagerGame(managerQuiz,managerDomMock);
+        let managerGame = new Game(managerQuiz,managerDomMock);
         managerDomMockSinon.expects("renderQuestionAnswered").exactly(numberForWin);
         managerDomMockSinon.expects("toggleButtonNext").exactly((numberForWin*2)-1);
         managerDomMockSinon.expects("renderQuestion").exactly(numberForWin-1);

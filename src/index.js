@@ -1,7 +1,7 @@
 'use strict';
 
 let ManagerFile = require('./ManagerFile');
-let ManagerGame = require('./ManagerGame');
+let Game = require('./Game');
 let ManagerQuiz = require('./ManagerQuiz');
 let ManagerDom = require('./ManagerDom');
 
@@ -11,11 +11,11 @@ function initialise(){
     let listJson = managerFile.loadJson();
     let managerQuiz = new ManagerQuiz(listJson.preguntas);
     let managerDom = new ManagerDom();
-    let managerGame = new ManagerGame(managerQuiz,managerDom);
+    let game = new Game(managerQuiz,managerDom);
 
-    window.start = managerGame.startGame;
-    window.updateAnswer = managerGame.updateAnswer;
-    window.nextQuestion = managerGame.nextQuestion;
+    window.start = game.startGame;
+    window.updateAnswer = game.updateAnswer;
+    window.nextQuestion = game.nextQuestion;
 }
 
 window.resetGame = function(){

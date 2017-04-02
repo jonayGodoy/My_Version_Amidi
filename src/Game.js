@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function ManagerGame(managerQuiz, managerDom) {
+module.exports = function Game(managerQuiz, managerDom) {
 
     const NUMBER_FOR_WIN = 5;
 
