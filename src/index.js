@@ -18,6 +18,8 @@ function initialise(){
     window.nextQuestion = managerGame.nextQuestion;
 }
 
-window.reStart = initialise;
+window.resetGame = function(){
+    location.reload(true);
+};
 
 

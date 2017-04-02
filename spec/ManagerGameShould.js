@@ -12,9 +12,6 @@ let ManagerGame = require('../src/ManagerGame');
 
 
 describe("ManagerGame Should", function () {
-
-    const NUMBER_FOR_WIN_DEFAULT_TEST = 5;
-
     let managerQuiz;
     let managerDomMockSinon;
     let managerDomMock;
@@ -97,7 +94,7 @@ describe("ManagerGame Should", function () {
         let listJson = managerFileStub.loadJson();
         managerQuiz = new ManagerQuiz(listJson.preguntas);
 
-        managerGame = new ManagerGame(managerQuiz,managerDomMock,NUMBER_FOR_WIN_DEFAULT_TEST);
+        managerGame = new ManagerGame(managerQuiz,managerDomMock);
     });
 
     it('Game Start', function () {
@@ -134,9 +131,9 @@ describe("ManagerGame Should", function () {
     });
 
     it("Player win, player success 5 answer and printVictory", function () {
-        let numberForWin = NUMBER_FOR_WIN_DEFAULT_TEST
+        let numberForWin = 5;
 
-        let managerGame = new ManagerGame(managerQuiz,managerDomMock,numberForWin);
+        let managerGame = new ManagerGame(managerQuiz,managerDomMock);
         managerDomMockSinon.expects("renderQuestionAnswered").exactly(numberForWin);
         managerDomMockSinon.expects("toggleButtonNext").exactly((numberForWin*2)-1);
         managerDomMockSinon.expects("renderQuestion").exactly(numberForWin-1);
@@ -151,7 +148,6 @@ describe("ManagerGame Should", function () {
 
         managerDomMockSinon.verify();
     });
-
 
     function returnAnswerFail(question) {
         return (question.respuesta != question.respuesta[0]) ? question.respuesta[0] : question.respuesta[1];

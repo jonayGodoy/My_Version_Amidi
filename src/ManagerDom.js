@@ -14,6 +14,7 @@ module.exports = function ManagerDom() {
         let divLoad = document.getElementById(idLoad);
         let divApp = document.getElementById(idApp);
 
+
         divLoad.classList.add('hidden');
         divApp.classList.remove('hidden');
 
@@ -74,6 +75,8 @@ module.exports = function ManagerDom() {
             }
         }
     }
+
+
 
 
 };
