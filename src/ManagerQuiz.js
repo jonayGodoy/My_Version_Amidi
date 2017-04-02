@@ -1,6 +1,6 @@
 'use strict';
 
-function ManagerQuiz(ListQuestion) {
+module.exports = function ManagerQuiz(ListQuestion) {
 
     let listQuestion = ListQuestion;
     let currentQuestion = randomQuestion();
@@ -8,7 +8,7 @@ function ManagerQuiz(ListQuestion) {
 
     this.getCurrentQuestion = () => (currentQuestion);
 
-    this.getListQuestion = () =>(listQuestion);
+    this.getListQuestion = () => (listQuestion);
 
 
      this.isCorrectQuestion = function(answer) {
@@ -31,5 +31,4 @@ function ManagerQuiz(ListQuestion) {
         listQuestion.splice(position,1);
     }
 
-}
-module.exports = ManagerQuiz;
+};

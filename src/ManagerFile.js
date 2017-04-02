@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function ManagerFile() {
      this.loadJson = function(){
         let httpRequest = new XMLHttpRequest();

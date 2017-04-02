@@ -1,10 +1,8 @@
 'use strict';
 
-let should = require('chai').should();
 let expect = require('chai').expect;
 let assert = require('chai').assert;
 let sinon = require('sinon');
-
 
 
 let ManagerQuiz = require('../src/ManagerQuiz');

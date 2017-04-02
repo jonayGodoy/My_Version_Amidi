@@ -1,12 +1,9 @@
 'use strict';
 
-
-var should = require('chai').should();
-var expect = require('chai').expect;
+let should = require('chai').should();
+let expect = require('chai').expect;
 
 let ManagerQuiz = require('../src/ManagerQuiz');
-
-//import ManagerQuiz from '../src/ManagerQuiz';
 
 describe('ManagerQuiz Should', () => {
 
