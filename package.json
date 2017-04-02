@@ -1,18 +1,19 @@
 {
-  "name": "password-validator-kata",
+  "name": "Amidi",
   "version": "1.0.0",
   "description": "",
-  "author": "Codesai",
+  "author": "Jonay Godoy",
   "scripts": {
     "test": "mocha"
   },
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.24.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
-    "babel-preset-env": "^1.2.2",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-2": "^6.22.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "sinon": "^2.1.0"
+    "sinon": "^2.1.0",
+    "webpack": "^2.3.2"
   }
 }

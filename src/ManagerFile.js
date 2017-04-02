@@ -1,4 +1,4 @@
-function ManagerFile() {
+export default function ManagerFile() {
      this.loadJson = function(){
         let httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function() {
@@ -13,5 +13,4 @@ function ManagerFile() {
         httpRequest.send();
          return localStorage.getItem("preguntas");
     }
-}
-module.exports = ManagerFile;
+};
