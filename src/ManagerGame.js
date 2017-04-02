@@ -1,18 +1,10 @@
 'use strict';
 
-module.exports = function ManagerGame(managerQuiz, managerDom, numberForWin) {
+module.exports = function ManagerGame(managerQuiz, managerDom) {
 
-    const NUMBER_FOR_WIN = numberForWin;
+    const NUMBER_FOR_WIN = 5;
 
     let countQuestionsSuccess = 0;
-
-    constructor();
-    function constructor() {
-        if(NUMBER_FOR_WIN == undefined)
-            throw "You have introduce numberForWin in the constructor";
-        if(!Number.isInteger(NUMBER_FOR_WIN))
-            throw "You numberForWin have type Integer";
-    }
 
     this.startGame = () => {
         managerDom.start();

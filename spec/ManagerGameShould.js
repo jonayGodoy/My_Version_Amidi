@@ -153,14 +153,6 @@ describe("ManagerGame Should", function () {
     });
 
 
-    it("if not introduce a parameter questions for win ManagerQuiz Call Exception", function () {
-        expect(ManagerGame.bind(managerGame,managerQuiz,managerDomMock)).to.throw("You have introduce numberForWin in the constructor");
-    });
-
-    it("if not introduce a number questions for win ManagerQuiz Call Exception", function () {
-        expect(ManagerGame.bind(managerGame,managerQuiz,managerDomMock,"5")).to.throw("You numberForWin have type Integer");
-    });
-
     function returnAnswerFail(question) {
         return (question.respuesta != question.respuesta[0]) ? question.respuesta[0] : question.respuesta[1];
     }
