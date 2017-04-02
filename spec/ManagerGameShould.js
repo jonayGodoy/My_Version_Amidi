@@ -95,8 +95,8 @@ describe("ManagerGame Should", function () {
             }
         );
 
-        let listQuestion = managerFileStub.loadJson();
-        managerQuiz = new ManagerQuiz(listQuestion.preguntas);
+        let listJson = managerFileStub.loadJson();
+        managerQuiz = new ManagerQuiz(listJson.preguntas);
 
         managerGame = new ManagerGame(managerQuiz,managerDomMock,NUMBER_FOR_WIN_DEFAULT_TEST);
     });
