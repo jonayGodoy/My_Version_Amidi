@@ -10,6 +10,7 @@ let ManagerDOM = require('../src/ManagerDom');
 let ManagerFile = require('../src/ManagerFile');
 let ManagerGame = require('../src/ManagerGame');
 
+
 describe("ManagerGame Should", function () {
 
     const NUMBER_FOR_WIN_DEFAULT_TEST = 5;
@@ -110,13 +111,13 @@ describe("ManagerGame Should", function () {
 
     it("Player answer fail", function () {
         let question = managerQuiz.getCurrentQuestion();
-        let failAnswer = (question.respuesta != question.respuesta[0]) ? question.respuesta[0] : question.respuesta[1];
+        let failAnswer = returnAnswerFail(question);
         managerDomMockSinon.expects("renderQuestionAnswered").once();
         managerDomMockSinon.expects("toggleButtonNext").once();
 
+        managerDomMockSinon.expects("printVictory").never();
 
         managerGame.updateAnswer(failAnswer);
-        expect(managerGame.isPlayerWin()).to.be.false;
 
         managerDomMockSinon.verify();
     });
@@ -132,13 +133,14 @@ describe("ManagerGame Should", function () {
         assert.deepEqual(question, managerQuiz.getCurrentQuestion());
     });
 
-    it("Player win, player success 5 answer", function () {
+    it("Player win, player success 5 answer and printVictory", function () {
         let numberForWin = NUMBER_FOR_WIN_DEFAULT_TEST
 
         let managerGame = new ManagerGame(managerQuiz,managerDomMock,numberForWin);
         managerDomMockSinon.expects("renderQuestionAnswered").exactly(numberForWin);
         managerDomMockSinon.expects("toggleButtonNext").exactly((numberForWin*2)-1);
         managerDomMockSinon.expects("renderQuestion").exactly(numberForWin-1);
+
         managerDomMockSinon.expects("printVictory").once();
 
         for(let i = 0; i < numberForWin;i++){
@@ -147,7 +149,6 @@ describe("ManagerGame Should", function () {
             managerGame.nextQuestion();
         }
 
-        expect(managerGame.isPlayerWin()).to.be.true;
         managerDomMockSinon.verify();
     });
 
@@ -160,5 +161,7 @@ describe("ManagerGame Should", function () {
         expect(ManagerGame.bind(managerGame,managerQuiz,managerDomMock,"5")).to.throw("You numberForWin have type Integer");
     });
 
-
+    function returnAnswerFail(question) {
+        return (question.respuesta != question.respuesta[0]) ? question.respuesta[0] : question.respuesta[1];
+    }
 });

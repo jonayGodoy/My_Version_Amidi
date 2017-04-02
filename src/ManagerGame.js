@@ -32,13 +32,8 @@ module.exports = function ManagerGame(managerQuiz, managerDom, numberForWin) {
         managerDom.toggleButtonNext();
     };
 
-    this.isPlayerWin = function(){
-        return (countQuestionsSuccess === NUMBER_FOR_WIN);
-    };
-
     this.nextQuestion = function(){
-        console.log(this.isPlayerWin());
-        if(this.isPlayerWin()){
+        if(isPlayerWin()){
             managerDom.printVictory();
         }else{
             let question = managerQuiz.getCurrentQuestion();
@@ -47,4 +42,9 @@ module.exports = function ManagerGame(managerQuiz, managerDom, numberForWin) {
         }
 
     };
+
+    function isPlayerWin(){
+        return (countQuestionsSuccess === NUMBER_FOR_WIN);
+    };
+
 };
