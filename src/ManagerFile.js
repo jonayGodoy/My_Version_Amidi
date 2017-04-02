@@ -1,4 +1,4 @@
-export default function ManagerFile() {
+module.exports = function ManagerFile() {
      this.loadJson = function(){
         let httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = function() {

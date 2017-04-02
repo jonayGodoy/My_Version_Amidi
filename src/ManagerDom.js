@@ -1,6 +1,6 @@
 'use strict';
 
-function ManagerDom() {
+module.exports = function ManagerDom() {
 
     const idLoad = "amidi";
     const idApp = "app";
@@ -25,5 +25,5 @@ function ManagerDom() {
             throw "UnSupportedOperationException";
         };
 
-}
-module.exports = ManagerDom;
+};
+
