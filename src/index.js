@@ -8,8 +8,8 @@ let ManagerDom = require('./ManagerDom');
 initialise();
 function initialise(){
     let managerFile = new ManagerFile();
-     managerFile.loadJson().then(v => {
-        let managerQuiz = new ManagerQuiz(v.preguntas);
+    managerFile.loadJson().then(listQuestionJson => {
+        let managerQuiz = new ManagerQuiz(listQuestionJson.preguntas);
         let managerDom = new ManagerDom();
         let game = new Game(managerQuiz,managerDom);
 

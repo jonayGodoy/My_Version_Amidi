@@ -2,7 +2,7 @@
 module.exports = function ManagerFile() {
      this.loadJson = function(){
          return new Promise((resolve, reject) => {
-             var data = "";
+            let data = "";
             let httpRequest = new XMLHttpRequest();
             httpRequest.onreadystatechange = function() {
                 if (httpRequest.readyState === 4) {
